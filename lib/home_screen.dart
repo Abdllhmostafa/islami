@@ -4,7 +4,9 @@ import 'package:islami/hadeth_tab/hadeth_tab.dart';
 import 'package:islami/quraan_tab/quraan_tab.dart';
 import 'package:islami/radio_tab/radio_tab.dart';
 import 'package:islami/sebha_tab/sebha_tab.dart';
+import 'package:islami/selected_icon.dart';
 import 'package:islami/time_tab/time_tab.dart';
+import 'package:islami/unselected_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = 'homeScreen';
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<String> images = [
     'quraan_background',
     'hadeth_background',
-    'quraan_background',
+    'sebha_background',
     'quraan_background',
     'quraan_background',
   ];
@@ -62,42 +64,24 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/SVG Images/Quraan.svg',
-                  colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
-                ),
-                activeIcon: SvgPicture.asset(
-                  'assets/SVG Images/Quraan.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
+                icon: UnselectedIcon(imageName: 'Quraan'),
+                activeIcon: SelectedIcon(imageName: 'Quraan'),
                 label: 'Quran'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/SVG Images/radio.svg'),
-                activeIcon: SvgPicture.asset(
-                  'assets/SVG Images/radio.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
+                icon: UnselectedIcon(imageName: 'hadeth'),
+                activeIcon: SelectedIcon(imageName: 'hadeth'),
                 label: 'Hadeth'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/SVG Images/sebha.svg'),
-                activeIcon: SvgPicture.asset(
-                  'assets/SVG Images/sebha.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
+                icon: UnselectedIcon(imageName: 'sebha'),
+                activeIcon: SelectedIcon(imageName: 'sebha'),
                 label: 'Sebha'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/SVG Images/radio.svg'),
-                activeIcon: SvgPicture.asset(
-                  'assets/SVG Images/radio.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
+                icon: UnselectedIcon(imageName: 'radio'),
+                activeIcon: SelectedIcon(imageName: 'radio'),
                 label: 'Radio'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/SVG Images/time.svg'),
-                activeIcon: SvgPicture.asset(
-                  'assets/SVG Images/time.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
+                icon: UnselectedIcon(imageName: 'time'),
+                activeIcon: SelectedIcon(imageName: 'time'),
                 label: 'Time'),
           ]),
     );
