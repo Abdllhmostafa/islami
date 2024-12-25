@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami/quraan_tab/surah.dart';
+import 'package:islami/quraan_tab/surah_item.dart';
 
 class QuraanTab extends StatelessWidget {
   List<String> arabicSuraNames = [
@@ -351,8 +353,41 @@ class QuraanTab extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('QuraanTab'),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'Surah List',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.separated(
+              separatorBuilder: (context, index) => Divider(
+                thickness: 1,
+                color: Colors.white,
+                indent: 40,
+                endIndent: 40,
+              ),
+              itemBuilder: (context, index) => SurahItem(
+                Surah(
+                    englishName: englishSuraNames[index],
+                    arabichName: arabicSuraNames[index],
+                    ayatCount: ayatCount[index],
+                    surahNum: index + 1),
+              ),
+              itemCount: arabicSuraNames.length,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
