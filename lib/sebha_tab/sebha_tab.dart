@@ -35,7 +35,8 @@ class _SebhaTabState extends State<SebhaTab> {
                   alignment: Alignment.topCenter,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 58),
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.sizeOf(context).width * 0.18),
                       child: Image.asset('assets/PNG Images/sebha_head.png'),
                     ),
                     Center(
