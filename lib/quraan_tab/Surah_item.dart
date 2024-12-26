@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/app_theme.dart';
 import 'package:islami/quraan_tab/surah.dart';
 
 class SurahItem extends StatelessWidget {
@@ -25,7 +26,7 @@ class SurahItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white,
+                  color: AppTheme.white,
                 ),
               ),
             ),
@@ -37,14 +38,14 @@ class SurahItem extends StatelessWidget {
                 surah.englishName,
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white,
+                  color: AppTheme.white,
                 ),
               ),
               Text(
                 '${surah.ayatCount}  Verses',
                 style: TextStyle(
                   fontSize: 14,
-                  color: Colors.white,
+                  color: AppTheme.white,
                 ),
               ),
             ],
@@ -54,7 +55,7 @@ class SurahItem extends StatelessWidget {
             surah.arabichName,
             style: TextStyle(
               fontSize: 20,
-              color: Colors.white,
+              color: AppTheme.white,
             ),
           ),
         ],
